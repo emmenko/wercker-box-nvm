@@ -1,7 +1,7 @@
 name : nvm
 version : 0.1.0
 description: Installs nvm to handle multiple NodeJS versions
-inherits: wercker/ubuntu12.04-webessentials@1.0.0
+inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type : main
 platform : ubuntu@12.04
 keywords:
@@ -12,17 +12,20 @@ packages:
   - nvm
 script: |
   # Install nvm through curl
-  curl https://raw.githubusercontent.com/creationix/nvm/v0.11.2/install.sh | bash
+  curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
 
   # Source the nvm script so it's available on the commandline
   source $HOME/.nvm/nvm.sh
   echo 'source $HOME/.nvm/nvm.sh' | sudo tee -a /etc/profile
 
-  # Install the latest versions of 0.8, 0.9, 0.10 and 0.11
+  # Install the latest versions of node 0.8, 0.9, 0.10, and 0.11
   nvm install 0.8
   nvm install 0.9
   nvm install 0.10
   nvm install 0.11
+  
+  # Install latest version of io.js
+  nvm install iojs
 
-  # Make 0.10.x the default version
+  # Make node 0.10.x the default version
   nvm use 0.10
