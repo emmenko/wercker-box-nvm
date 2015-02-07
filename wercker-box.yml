@@ -1,5 +1,5 @@
 name : nvm
-version : 0.1.0
+version : 0.2.0
 description: Installs nvm to handle multiple NodeJS versions
 inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type : main
@@ -18,12 +18,12 @@ script: |
   source $HOME/.nvm/nvm.sh
   echo 'source $HOME/.nvm/nvm.sh' | sudo tee -a /etc/profile
 
-  # Install the latest versions of node 0.8, 0.9, 0.10, and 0.11
+  # Install the latest versions of node 0.8, 0.9, 0.10 and 0.11
   nvm install 0.8
   nvm install 0.9
   nvm install 0.10
   nvm install 0.11
-  
+
   # Install latest version of io.js
   nvm install iojs
 
