@@ -22,13 +22,13 @@ script: |
   echo 'source $HOME/.nvm/nvm.sh' | sudo tee -a /etc/profile
 
   # Install the latest versions of node 0.8, 0.9, 0.10 and 0.11
-  nvm install 0.8
-  nvm install 0.9
+  #nvm install 0.8
+  #nvm install 0.9
   nvm install 0.10
-  nvm install 0.11
+  #nvm install 0.11
 
   # Install latest version of io.js
-  nvm install iojs
+  #nvm install iojs
 
   # Make node 0.10.x the default version
   nvm use 0.10
